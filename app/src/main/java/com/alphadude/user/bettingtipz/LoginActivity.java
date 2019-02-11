@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         email = edtEmail.getText().toString().trim();
         password = edtPaasword.getText().toString().trim();
 
-        auth.createUserWithEmailAndPassword(email,password)
+        auth.signInWithEmailAndPassword(email,password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
