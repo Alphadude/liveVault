@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "550858820048",
+    "firebase_url": "https://bettingtipz-31e0b.firebaseio.com",
+    "project_id": "bettingtipz-31e0b",
+    "storage_bucket": "bettingtipz-31e0b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:550858820048:android:2c57384a50ebc068",
+        "android_client_info": {
+          "package_name": "com.alphadude.user.bettingtipz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "550858820048-l495r8luiqm82k4h46oeqibekukhhuut.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alphadude.user.bettingtipz",
+            "certificate_hash": "deffde0d8c6dd03d74ca9a0578f7073387f165da"
+          }
+        },
+        {
+          "client_id": "550858820048-fllca7lakkgb447p2dmao710umes2j69.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtluCkdS4tU0s01F9xX5rsrsTEY30bUxY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "550858820048-fllca7lakkgb447p2dmao710umes2j69.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
