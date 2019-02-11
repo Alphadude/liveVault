@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+<RelativeLayout
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/userimage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/p" />
+
+    <TextView
+        android:id="@+id/usernotify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/userimage"
+        android:text="06/02/2019"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/list_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/usernotify"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/userimage"
+        android:textColor="#000000"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textStyle="bold"
+        android:text="England  \n  Manchester"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="16sp" />
+    <TextView
+        android:id="@+id/tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/list_desc"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/userimage"
+        android:textColor="#000000"
+        android:text="Tip       Home"
+        android:textStyle="italic"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="16sp" />
+</RelativeLayout>
+    <RelativeLayout
+        android:background="?android:attr/selectableItemBackground"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/userimage1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/p" />
+
+        <TextView
+            android:id="@+id/usernotify1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@+id/userimage1"
+            android:text="06/02/2019"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/list_desc1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/usernotify1"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@+id/userimage1"
+            android:textColor="#000000"
+            android:ellipsize="end"
+            android:textStyle="bold"
+            android:singleLine="true"
+            android:text="England  /n  Manchester City"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/tip1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/list_desc1"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@+id/userimage1"
+            android:textColor="#000000"
+            android:textStyle="italic"
+            android:text="Tip       Away"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="16sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:background="?android:attr/selectableItemBackground"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/userimage2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/p" />
+
+        <TextView
+            android:id="@+id/usernotify2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@+id/userimage2"
+            android:text="LaLiga"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/list_desc2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/usernotify2"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@+id/userimage2"
+            android:textColor="#000000"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:text="Barcelona  Vs  Madrid"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/tip2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/list_desc2"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@+id/userimage2"
+            android:textColor="#000000"
+            android:textStyle="italic"
+            android:text="Tip       Home"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:background="?android:attr/selectableItemBackground"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/userimage3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/p" />
+
+            <TextView
+                android:id="@+id/usernotify3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@+id/userimage3"
+                android:text="06/02/2019"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/list_desc3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/usernotify3"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@+id/userimage3"
+                android:textColor="#000000"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textStyle="bold"
+                android:text="England  \n  Manchester"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/tip3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/list_desc3"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@+id/userimage3"
+                android:textColor="#000000"
+                android:textStyle="italic"
+                android:text="Tip       Home"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="16sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:background="?android:attr/selectableItemBackground"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/userimage4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/p" />
+
+            <TextView
+                android:id="@+id/usernotify4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@+id/userimage4"
+                android:text="06/02/2019"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/list_desc4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/usernotify4"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@+id/userimage4"
+                android:textColor="#000000"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textStyle="bold"
+                android:text="England  /n  Manchester City"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/tip4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/list_desc4"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@+id/userimage4"
+                android:textColor="#000000"
+                android:textStyle="italic"
+                android:text="Tip       Away"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="16sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:background="?android:attr/selectableItemBackground"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/userimage5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/p" />
+
+            <TextView
+                android:id="@+id/usernotify5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@+id/userimage5"
+                android:text="LaLiga"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/list_desc5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/usernotify5"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@+id/userimage5"
+                android:textColor="#000000"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textStyle="bold"
+                android:text="Barcelona  Vs  Madrid"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/tip5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/list_desc5"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@+id/userimage5"
+                android:textColor="#000000"
+                android:textStyle="italic"
+                android:text="Tip       Home"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>
