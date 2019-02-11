@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content">
+
+
+
+    <RelativeLayout
+        android:background="?android:attr/selectableItemBackground"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_more"
+            android:visibility="gone"
+            android:layout_height="30dp" />
+
+        <ImageView
+            android:id="@+id/userimage"
+            android:layout_centerVertical="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_football" />
+
+        <TextView
+            android:id="@+id/userDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@+id/userimage"
+            android:text="06/02/2019"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/countries"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/userDate"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@+id/userimage"
+            android:textColor="#5c5757"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:text="England"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/list_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/countries"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@+id/userimage"
+            android:textColor="#000000"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:text="England  \n  Manchester"
+            android:textSize="16sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/list_desc"
+            android:layout_toRightOf="@+id/userimage">
+
+            <TextView
+                android:id="@+id/tip"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                android:text="Tip       Home"
+                android:textStyle="italic"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tipsResult"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                android:text=" Home"
+                android:textStyle="italic"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>

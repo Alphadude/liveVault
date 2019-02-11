@@ -2,4 +2,5 @@
     <string name="app_name">BettingTipz</string>
     <string name="title_activity_admin">AdminActivity</string>
     <string name="title_activity_vip_sub">VipSub</string>
+    <string name="title_activity_add_tips">AddTips</string>
 </resources>

@@ -24,7 +24,16 @@
             android:label="@string/title_activity_admin"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".VipSub" />
-        <activity android:name=".VipArchives"></activity>
+        <activity android:name=".VipArchives" />
+        <activity
+            android:name=".AddTips"
+            android:label="@string/title_activity_add_tips"
+            android:parentActivityName=".AdminActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.alphadude.user.bettingtipz.AdminActivity" />
+        </activity>
     </application>
 
 </manifest>
