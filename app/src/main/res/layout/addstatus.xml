@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:text="Match Results"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textColor="#000"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_width="300dp"
+        android:layout_marginTop="10dp"
+        android:hint="Enter Result"
+        android:id="@+id/edtResult"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content" />
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/btnSubmitResult"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:layout_marginTop="15dp"
+        fancy:fb_defaultColor="@color/colorPrimary"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        fancy:fb_text="Submit Result"
+        fancy:fb_textColor="#FFFFFF"
+        fancy:fb_textSize="20sp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        fancy:fb_radius="30dp"/>
+
+</LinearLayout>

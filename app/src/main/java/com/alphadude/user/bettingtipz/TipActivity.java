@@ -51,6 +51,12 @@ public class TipActivity extends AppCompatActivity {
         initAdapter();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        initAdapter();
+    }
+
     private void initAdapter() {
         FirebaseRecyclerAdapter<Tips,PostViewHolder> adapter = new FirebaseRecyclerAdapter<Tips, PostViewHolder>(
                 Tips.class,
