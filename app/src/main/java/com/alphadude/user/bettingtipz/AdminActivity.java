@@ -124,7 +124,7 @@ public class AdminActivity extends AppCompatActivity implements DatePickerDialog
                         buttonSubmit.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                progressDialog.setMessage("Adding tip");
+                                progressDialog.setMessage("Adding to archive");
                                 progressDialog.setCancelable(false);
                                 progressDialog.show();
 

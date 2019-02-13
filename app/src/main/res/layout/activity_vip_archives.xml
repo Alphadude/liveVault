@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
 
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="0dp"
+    android:layout_weight="1"
     android:orientation="vertical"
+    android:id="@+id/lintext"
     android:layout_margin="10dp"
     tools:context=".VipArchives">
 
@@ -48,172 +51,16 @@
         android:textColor="#900"
         android:text=""/>
 
-    <TableLayout
-        android:id="@+id/simpleTableLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:stretchColumns="1"> <!-- stretch the second column of the layout-->
-
-        <!-- first row of the table layout-->
-        <TableRow
-            android:id="@+id/firstRow"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
-            <!-- first element of the row-->
-            <TextView
-
-                android:id="@+id/TextViewDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFF"
-                android:padding="18dp"
-                android:text="Date"
-                android:textColor="#000"
-                android:textSize="12dp" />
-
-            <TextView
-
-                android:id="@+id/TextViewOdds"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFF"
-                android:padding="18dp"
-                android:text="ODDS"
-                android:textColor="#000"
-                android:textSize="14dp" />
-            <TextView
-
-                android:id="@+id/TextViewResults"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFf"
-                android:padding="18dp"
-                android:text="RESULTS"
-                android:textColor="#000"
-                android:textSize="14dp" />
-
-        </TableRow>
-        <TableRow
-            android:id="@+id/firtRow"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
-            <!-- first element of the row-->
-            <TextView
-
-                android:id="@+id/TxtViewDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFF"
-                android:padding="18dp"
-                android:text="Date"
-                android:textColor="#000"
-                android:textSize="12dp" />
-
-            <TextView
-
-                android:id="@+id/TextViewOdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFF"
-                android:padding="18dp"
-                android:text="ODDS"
-                android:textColor="#000"
-                android:textSize="14dp" />
-            <TextView
-
-                android:id="@+id/TextViewResult"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFf"
-                android:padding="18dp"
-                android:text="RESULTS"
-                android:textColor="#000"
-                android:textSize="14dp" />
-
-        </TableRow>
-        <TableRow
-            android:id="@+id/fiRow"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
-            <!-- first element of the row-->
-            <TextView
-
-                android:id="@+id/TViewDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFF"
-                android:padding="18dp"
-                android:text="Date"
-                android:textColor="#000"
-                android:textSize="12dp" />
-
-            <TextView
-
-                android:id="@+id/TViewOdds"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFF"
-                android:padding="18dp"
-                android:text="ODDS"
-                android:textColor="#000"
-                android:textSize="14dp" />
-            <TextView
-
-                android:id="@+id/TViewResults"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFf"
-                android:padding="18dp"
-                android:text="RESULTS"
-                android:textColor="#000"
-                android:textSize="14dp" />
-
-        </TableRow>
-        <TableRow
-            android:id="@+id/fRow"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
-            <!-- first element of the row-->
-            <TextView
-
-                android:id="@+id/TDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFF"
-                android:padding="18dp"
-                android:text="Date"
-                android:textColor="#000"
-                android:textSize="12dp" />
-
-            <TextView
-
-                android:id="@+id/TOdds"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFF"
-                android:padding="18dp"
-                android:text="ODDS"
-                android:textColor="#000"
-                android:textSize="14dp" />
-            <TextView
-
-                android:id="@+id/TResults"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFf"
-                android:padding="18dp"
-                android:text="RESULTS"
-                android:textColor="#000"
-                android:textSize="14dp" />
-
-        </TableRow>
-    </TableLayout>
-
 
 </LinearLayout>
 
-</ScrollView>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/rvArchives"
+        android:layout_weight="2">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>
