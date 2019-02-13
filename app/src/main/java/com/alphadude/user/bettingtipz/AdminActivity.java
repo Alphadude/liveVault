@@ -102,8 +102,8 @@ public class AdminActivity extends AppCompatActivity implements DatePickerDialog
                         dialogArchive.setContentView(R.layout.addarchives);
                         final EditText odds = dialogArchive.findViewById(R.id.edtOdds);
                         final EditText result = dialogArchive.findViewById(R.id.edtResultArc);
-                        FancyButton buttonSubmit = dialogArchive.findViewById(R.id.btnSubmitResult);
-                        FancyButton datePicker = dialogArchive.findViewById(R.id.btnSubmitResult);
+                        FancyButton buttonSubmit = dialogArchive.findViewById(R.id.btnSubmitArchive);
+                        FancyButton datePicker = dialogArchive.findViewById(R.id.btnDatePickerArchives);
 
                         datePicker.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -132,7 +132,7 @@ public class AdminActivity extends AppCompatActivity implements DatePickerDialog
                                 odde = odds.getText().toString().trim();
                                 results = result.getText().toString().trim();
 
-                                if (date.isEmpty() || odde.isEmpty()||results.isEmpty()){
+                                if (date.isEmpty()){
 
                                     Archive model = new Archive();
 
@@ -163,6 +163,8 @@ public class AdminActivity extends AppCompatActivity implements DatePickerDialog
 
 
                                 }else {
+                                    progressDialog.dismiss();
+                                    dialogArchive.dismiss();
                                     Toast.makeText(AdminActivity.this, "Fields must be filled to complete", Toast.LENGTH_SHORT).show();
                                     return;
                                 }
@@ -273,7 +275,7 @@ public class AdminActivity extends AppCompatActivity implements DatePickerDialog
 
     @Override
     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
-        date =  Day + "-" + Month + "-" + Year;
+        date =  String.valueOf(dayOfMonth + "-" + monthOfYear + "-" + year);
     }
 
     public static class PostViewHolder extends RecyclerView.ViewHolder {

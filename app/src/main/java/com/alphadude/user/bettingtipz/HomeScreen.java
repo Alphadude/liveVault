@@ -13,7 +13,6 @@ import android.widget.TextView;
 public class HomeScreen extends AppCompatActivity {
 
     private Button freetips, vipsub, viparchives;
-    private Button admin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +23,7 @@ public class HomeScreen extends AppCompatActivity {
         vipsub = (Button) findViewById(R.id.vipsub);
         viparchives = (Button) findViewById(R.id.viparchives);
 
-        admin = (Button) findViewById(R.id.here);
+
 
         freetips.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,12 +46,7 @@ public class HomeScreen extends AppCompatActivity {
             }
         });
 
-        admin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                login();
-            }
-        });
+
     }
 
     public void openFreeTips(){

@@ -27,7 +27,7 @@ public class VipArchives extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vip_archives);
 
-        archiveList = (RecyclerView)findViewById(R.id.rvTips);
+        archiveList = (RecyclerView)findViewById(R.id.rvArchives);
         archiveRef = FirebaseDatabase.getInstance().getReference().child("Archives");
 
         mLayoutManager = new LinearLayoutManager(this);

@@ -16,8 +16,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import mehdi.sakout.fancybuttons.FancyButton;
+
 public class LoginActivity extends AppCompatActivity {
-    private Button Login, Back;
+    private FancyButton Login;
+    private FancyButton Back;
     private EditText edtEmail,edtPaasword;
     private String email,password;
     private FirebaseAuth auth;
@@ -29,8 +32,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         auth = FirebaseAuth.getInstance();
 
-        Login = (Button)findViewById(R.id.login);
-        Back =(Button)findViewById(R.id.back);
+        Login = (FancyButton)findViewById(R.id.login);
+        Back =(FancyButton)findViewById(R.id.back);
         edtEmail = (EditText)findViewById(R.id.loginEmail);
         edtPaasword = (EditText)findViewById(R.id.loginPassword);
         dialog = new ProgressDialog(this);
