@@ -60,6 +60,7 @@ public class AdminActivity extends AppCompatActivity implements DatePickerDialog
         archiveRef = FirebaseDatabase.getInstance().getReference().child("Archives");
 
         mLayoutManager = new LinearLayoutManager(this);
+        mLayoutManager.setReverseLayout(true);
         calendar = Calendar.getInstance();
 
         Year = calendar.get(Calendar.YEAR);
