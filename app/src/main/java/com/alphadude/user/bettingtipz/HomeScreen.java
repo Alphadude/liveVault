@@ -3,6 +3,9 @@ package com.alphadude.user.bettingtipz;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -70,5 +73,28 @@ public class HomeScreen extends AppCompatActivity {
     public void login(){
         Intent open = new Intent(this, LoginActivity.class);
         startActivity(open);
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.home, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+
+        //respond to menu item selection
+
+        switch (item.getItemId()) {
+            case R.id.settings:
+                startActivity(new Intent(this, Settings.class));
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
     }
 }
