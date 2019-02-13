@@ -103,6 +103,11 @@ public class AddTips extends AppCompatActivity implements DatePickerDialog.OnDat
         awayTeam = edtAwayTeam.getText().toString().trim();
         tips = edtTips.getText().toString().trim();
 
+        if (date.isEmpty()){
+            Toast.makeText(this, "please select a date", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         DatabaseReference booksRef = tipsRef.push();
         key = booksRef.getKey();
 

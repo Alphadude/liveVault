@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -20,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alphadude.user.bettingtipz.Model.Archive;
 import com.alphadude.user.bettingtipz.Model.Tips;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,16 +29,22 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
+
+import java.util.Calendar;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 
-public class AdminActivity extends AppCompatActivity {
+public class AdminActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
     private RecyclerView tipsList;
-    private DatabaseReference TipsRef;
+    private DatabaseReference TipsRef,archiveRef;
     private LinearLayoutManager mLayoutManager;
-    private String key;
+    private String key,date,odde,results;
     private ProgressDialog progressDialog;
+    private Calendar calendar;
+    private DatePickerDialog datePickerDialog;
+    private int Year, Month, Day;
 
 
     @Override
@@ -49,9 +57,15 @@ public class AdminActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(AdminActivity.this);
         tipsList = (RecyclerView)findViewById(R.id.rvAdminTIps);
         TipsRef = FirebaseDatabase.getInstance().getReference().child("Tips");
+        archiveRef = FirebaseDatabase.getInstance().getReference().child("Archives");
 
         mLayoutManager = new LinearLayoutManager(this);
-        mLayoutManager.setReverseLayout(true);
+        calendar = Calendar.getInstance();
+
+        Year = calendar.get(Calendar.YEAR);
+        Month = calendar.get(Calendar.MONTH);
+        Day = calendar.get(Calendar.DAY_OF_MONTH);
+
 
         TipsRef.keepSynced(true);
         tipsList.setHasFixedSize(true);
@@ -82,6 +96,87 @@ public class AdminActivity extends AppCompatActivity {
                         break;
                     case 1:
                         //Do this and this
+                        final Dialog dialogArchive = new Dialog(AdminActivity.this);
+                        dialogArchive.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                        dialogArchive.setContentView(R.layout.addarchives);
+                        final EditText odds = dialogArchive.findViewById(R.id.edtOdds);
+                        final EditText result = dialogArchive.findViewById(R.id.edtResultArc);
+                        FancyButton buttonSubmit = dialogArchive.findViewById(R.id.btnSubmitResult);
+                        FancyButton datePicker = dialogArchive.findViewById(R.id.btnSubmitResult);
+
+                        datePicker.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                datePickerDialog = DatePickerDialog.newInstance(AdminActivity.this, Year, Month, Day);
+
+                                datePickerDialog.setThemeDark(false);
+
+                                datePickerDialog.showYearPickerFirst(false);
+
+                                datePickerDialog.setAccentColor(Color.parseColor("#0072BA"));
+
+                                datePickerDialog.setTitle("Select Date From DatePickerDialog");
+
+                                datePickerDialog.show(getFragmentManager(), "DatePickerDialog");
+                            }
+                        });
+
+                        buttonSubmit.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                progressDialog.setMessage("Adding tip");
+                                progressDialog.setCancelable(false);
+                                progressDialog.show();
+
+                                odde = odds.getText().toString().trim();
+                                results = result.getText().toString().trim();
+
+                                if (date.isEmpty() || odde.isEmpty()||results.isEmpty()){
+
+                                    Archive model = new Archive();
+
+                                    model.setDate(date);
+                                    model.setOdds(odde);
+                                    model.setResult(results);
+
+
+                                    archiveRef.push().setValue(model)
+                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if (task.isSuccessful()){
+                                                        Toast.makeText(AdminActivity.this, "Archive uploaded successfully", Toast.LENGTH_SHORT).show();
+                                                        progressDialog.dismiss();
+                                                        dialogArchive.dismiss();
+                                                    }
+                                                }
+                                            }).addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            progressDialog.dismiss();
+                                            dialogArchive.dismiss();
+                                            Toast.makeText(AdminActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+
+
+
+                                }else {
+                                    Toast.makeText(AdminActivity.this, "Fields must be filled to complete", Toast.LENGTH_SHORT).show();
+                                    return;
+                                }
+
+
+                            }
+                        });
+
+
+
+
+
+
+                        dialogArchive.show();
+
 
                         break;
 
@@ -151,11 +246,6 @@ public class AdminActivity extends AppCompatActivity {
                             }
                         });
 
-
-
-
-
-
                         dialog.show();
 
 
@@ -180,6 +270,11 @@ public class AdminActivity extends AppCompatActivity {
         initAdapter();
     }
 
+    @Override
+    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
+        date =  Day + "-" + Month + "-" + Year;
+    }
+
     public static class PostViewHolder extends RecyclerView.ViewHolder {
 
         View mView;
@@ -191,8 +286,8 @@ public class AdminActivity extends AppCompatActivity {
 
             mView = itemView;
             date = mView.findViewById(R.id.userDate);
-            country = mView.findViewById(R.id.list_desc);
-            teams = mView.findViewById(R.id.countries);
+            country = mView.findViewById(R.id.countries);
+            teams = mView.findViewById(R.id.list_desc);
             tips = mView.findViewById(R.id.tip);
             status = mView.findViewById(R.id.tipsResult);
             more = mView.findViewById(R.id.imgMore);

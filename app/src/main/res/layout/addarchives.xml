@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <mehdi.sakout.fancybuttons.FancyButton
-        android:id="@+id/btnDatePicker"
+        android:id="@+id/btnDatePickerArchives"
         android:paddingBottom="10dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
@@ -23,20 +23,6 @@
         fancy:fb_radius="30dp"/>
 
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:id="@+id/edtLeague"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:hint="Enter League"
-            android:layout_height="wrap_content" />
-    </android.support.design.widget.TextInputLayout>
-
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
@@ -45,23 +31,8 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:id="@+id/edtHomeTeam"
-            android:hint="Enter Home Team"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_height="wrap_content" />
-    </android.support.design.widget.TextInputLayout>
-
-
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:id="@+id/edtAwayTeam"
-            android:hint="Enter Away Team"
+            android:id="@+id/edtOdds"
+            android:hint="enter odds"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:layout_height="wrap_content" />
@@ -74,15 +45,15 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:id="@+id/edtTips"
-            android:hint="Enter Prediction"
+            android:id="@+id/edtResultArc"
+            android:hint="Enter Result..won or lost"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:layout_height="wrap_content" />
     </android.support.design.widget.TextInputLayout>
 
     <mehdi.sakout.fancybuttons.FancyButton
-        android:id="@+id/btnSubmitTip"
+        android:id="@+id/btnSubmitArchive"
         android:paddingBottom="10dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
@@ -91,9 +62,8 @@
         fancy:fb_defaultColor="@color/colorPrimary"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        fancy:fb_text="Submit Tip"
+        fancy:fb_text="Submit to Archives"
         fancy:fb_textColor="#FFFFFF"
-        android:layout_above="@+id/btnlogin"
         fancy:fb_textSize="20sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

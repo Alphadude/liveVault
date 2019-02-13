@@ -33,4 +33,5 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-database:2.1.1'
     implementation 'com.github.medyo:fancybuttons:1.9.0'
     implementation 'com.wdullaer:materialdatetimepicker:2.3.0'
+    implementation 'com.google.firebase:firebase-messaging:11.8.0'
 }

@@ -91,8 +91,8 @@ public class TipActivity extends AppCompatActivity {
 
             mView = itemView;
             date = mView.findViewById(R.id.userDate);
-            country = mView.findViewById(R.id.list_desc);
-            teams = mView.findViewById(R.id.countries);
+            country = mView.findViewById(R.id.countries);
+            teams = mView.findViewById(R.id.list_desc);
             tips = mView.findViewById(R.id.tip);
             status = mView.findViewById(R.id.tipsResult);
 
