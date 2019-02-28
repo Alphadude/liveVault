@@ -23,14 +23,14 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         android:textColor="#900"
-        android:text="Welcome to our vip platfrom. our aim is to make sure you make a profit out of betting business"/>
+        android:text="Welcome to our vip platform. our aim is to make sure you make a profit out of betting business"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="true"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:textColor="#000"
         android:text="our performance is really outstanding. but our guest today and enjoy winning with us"/>
 
@@ -38,18 +38,44 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:textStyle="bold"
         android:textColor="#009"
         android:text="Congratulations to all out VIP members. ONLY ONE SLIP a day. What you need to do is stake high and get doublet the amount"/>
 
-    <TextView
-        android:layout_width="wrap_content"
+    <TableLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAllCaps="true"
-        android:textStyle="bold"
-        android:textColor="#900"
-        android:text=""/>
+        android:stretchColumns="1">
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="#000"
+                android:text="DATE"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_gravity="center"
+                android:textColor="#000"
+                android:text="ODDS"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_gravity="center"
+                android:textColor="#000"
+                android:text="RESULT"/>
+        </TableRow>
+
+    </TableLayout>
 
 
 </LinearLayout>

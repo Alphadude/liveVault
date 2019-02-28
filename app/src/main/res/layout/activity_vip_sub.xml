@@ -26,7 +26,7 @@
             android:textSize="18sp"
             android:textColor="#009"
             android:layout_marginTop="20dp"
-            android:text="MAXIMISE YOUR YOUR ESRNING WITH VIP ONE SLIP 2+ ODDS"/>
+            android:text="MAXIMISE YOUR YOUR EARNING WITH VIP ONE SLIP 2+ ODDS"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
             android:textSize="15sp"
             android:textColor="#000"
             android:layout_marginTop="20dp"
-            android:text="We are using telegram channel to convey our tips. Please if you have noy yet installed the telegram messenger, do it as your first stop towards joining our VIP. GO to playStore and Download."/>
+            android:text="We are using telegram channel to convey our tips. Please if you have not yet installed the telegram messenger, do it as your first stop towards joining our VIP. GO to playStore and Download."/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
             android:textSize="18sp"
             android:textColor="#900"
             android:layout_marginTop="20dp"
-            android:text="Local Client (Nigeria)"/>
+            android:text="@string/local_client_nigeria"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -74,7 +74,7 @@
             android:textSize="20sp"
             android:textColor="#000"
             android:layout_marginTop="20dp"
-            android:text="Sure Tips VIP"/>
+            android:text="Email: victorezeuchegbu@gmail.com"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -82,29 +82,37 @@
             android:textSize="20sp"
             android:textColor="#900"
             android:layout_marginTop="20dp"
-            android:text="INTERNATIONAL CLIENTS"/>
+            android:text="phone number : +234 08027168109"/>
+
+
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:textSize="20sp"
+            android:textSize="18sp"
+            android:textColor="#900"
             android:layout_marginTop="20dp"
-            android:textColor="#900"
-            android:text="Sure Tips VIP"/>
+            android:text="@string/international_client"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_marginTop="20dp"
+            android:text="Email: victorezeuchegbu@gmail.com"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="20sp"
             android:textColor="#900"
-            android:text="Sure Tips VIP"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:textColor="#900"
-            android:text="Sure Tips VIP"/>
+            android:layout_marginTop="20dp"
+            android:text="phone number : +234 08027168109"/>
+
+
 
     </LinearLayout>
 </ScrollView>

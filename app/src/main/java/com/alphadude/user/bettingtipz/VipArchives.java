@@ -1,6 +1,7 @@
 package com.alphadude.user.bettingtipz;
 
 import android.graphics.Color;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -20,18 +21,23 @@ public class VipArchives extends AppCompatActivity {
     private DatabaseReference archiveRef;
     private LinearLayoutManager mLayoutManager;
     private String key;
+    ActionBar actionBar = null;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        actionBar = getSupportActionBar();
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_USE_LOGO);
+        actionBar.setIcon(R.mipmap.icon);
         setContentView(R.layout.activity_vip_archives);
 
         archiveList = (RecyclerView)findViewById(R.id.rvArchives);
         archiveRef = FirebaseDatabase.getInstance().getReference().child("Archives");
 
         mLayoutManager = new LinearLayoutManager(this);
-        mLayoutManager.setReverseLayout(true);
+      //  mLayoutManager.setReverseLayout(true);
 
         archiveRef.keepSynced(true);
         archiveList.setHasFixedSize(true);
@@ -53,7 +59,7 @@ public class VipArchives extends AppCompatActivity {
     private void initAdapter() {
         FirebaseRecyclerAdapter<Archive,PostViewHolder> adapter = new FirebaseRecyclerAdapter<Archive, PostViewHolder>(
                 Archive.class,
-                R.layout.tips,
+                R.layout.singlearchive,
                PostViewHolder.class,
                 archiveRef
         ) {
@@ -65,10 +71,12 @@ public class VipArchives extends AppCompatActivity {
 
                 viewHolder.odds.setText(model.getOdds());
 
-                if (model.getResult().equalsIgnoreCase("win")){
+                if (model.getResult().equalsIgnoreCase("won")){
                     viewHolder.results.setTextColor(Color.parseColor("#008577"));
+                    viewHolder.results.setText(model.getResult());
                 }else{
-                    viewHolder.results.setTextColor(Color.parseColor("FFF5382E"));
+                    viewHolder.results.setText(model.getResult());
+                    viewHolder.results.setTextColor(Color.parseColor("#008577"));
                 }
 
 

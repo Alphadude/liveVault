@@ -1,12 +1,18 @@
 package com.alphadude.user.bettingtipz;
 
+
 import android.content.Context;
+import android.os.Build;
 import android.support.annotation.NonNull;
+
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -27,18 +33,21 @@ public class TipActivity extends AppCompatActivity {
     private DatabaseReference TipsRef;
     private LinearLayoutManager mLayoutManager;
     private String key;
-
+    ActionBar actionBar = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        actionBar = getSupportActionBar();
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_USE_LOGO);
+        actionBar.setIcon(R.mipmap.icon);
         setContentView(R.layout.activity_tip);
 
 
-        tipsList = (RecyclerView)findViewById(R.id.rvTips);
+        tipsList = findViewById(R.id.rvTips);
         TipsRef = FirebaseDatabase.getInstance().getReference().child("Tips");
 
         mLayoutManager = new LinearLayoutManager(this);
-        mLayoutManager.setReverseLayout(true);
 
         TipsRef.keepSynced(true);
         tipsList.setHasFixedSize(true);

@@ -1,6 +1,7 @@
 package com.alphadude.user.bettingtipz;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,16 +13,23 @@ import android.widget.TextView;
 
 public class HomeScreen extends AppCompatActivity {
 
-    private Button freetips, vipsub, viparchives;
+    private Button freetips, vipsub, viparchives, Rate;
+    ActionBar actionBar = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        actionBar = getSupportActionBar();
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_USE_LOGO);
+        actionBar.setIcon(R.mipmap.icon);
         setContentView(R.layout.activity_home_screen);
 
-        freetips = (Button) findViewById(R.id.freetips);
-        vipsub = (Button) findViewById(R.id.vipsub);
-        viparchives = (Button) findViewById(R.id.viparchives);
+        freetips = findViewById(R.id.freetips);
+        vipsub =  findViewById(R.id.vipsub);
+        viparchives =  findViewById(R.id.viparchives);
+        Rate =  findViewById(R.id.rate);
+
 
 
 
@@ -40,6 +48,13 @@ public class HomeScreen extends AppCompatActivity {
         });
 
         viparchives.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Viparchives();
+            }
+        });
+
+        Rate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Viparchives();

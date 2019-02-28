@@ -1,6 +1,7 @@
 package com.alphadude.user.bettingtipz;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.animation.Animation;
@@ -10,13 +11,16 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView splashImage;
-
+ActionBar actionBar = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        actionBar = getSupportActionBar();
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_HOME );
         setContentView(R.layout.activity_main);
-        splashImage = (TextView)findViewById(R.id.splash);
+
+        ImageView splashImage = findViewById(R.id.splash);
 
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.transition);
         splashImage.startAnimation(animation);

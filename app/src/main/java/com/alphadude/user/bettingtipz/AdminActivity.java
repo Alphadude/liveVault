@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import com.alphadude.user.bettingtipz.Model.Archive;
 import com.alphadude.user.bettingtipz.Model.Tips;
+import com.codetroopers.betterpickers.calendardatepicker.CalendarDatePickerDialogFragment;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -35,7 +36,7 @@ import java.util.Calendar;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 
-public class AdminActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
+public class AdminActivity extends AppCompatActivity implements  CalendarDatePickerDialogFragment.OnDateSetListener {
 
     private RecyclerView tipsList;
     private DatabaseReference TipsRef,archiveRef;
@@ -51,16 +52,15 @@ public class AdminActivity extends AppCompatActivity implements DatePickerDialog
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         progressDialog = new ProgressDialog(AdminActivity.this);
-        tipsList = (RecyclerView)findViewById(R.id.rvAdminTIps);
+        tipsList = findViewById(R.id.rvAdminTIps);
         TipsRef = FirebaseDatabase.getInstance().getReference().child("Tips");
         archiveRef = FirebaseDatabase.getInstance().getReference().child("Archives");
 
         mLayoutManager = new LinearLayoutManager(this);
-        mLayoutManager.setReverseLayout(true);
         calendar = Calendar.getInstance();
 
         Year = calendar.get(Calendar.YEAR);
@@ -79,8 +79,20 @@ public class AdminActivity extends AppCompatActivity implements DatePickerDialog
               showAlert();
             }
         });
+
+        FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fab2);
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                backHome();
+            }
+        });
     }
 
+    private void backHome(){
+        Intent road = new Intent(this,HomeScreen.class);
+        startActivity(road);
+    }
     private void showAlert() {
 
         String textToShow[] = {"Add Tip","Add Archive"};
@@ -108,17 +120,23 @@ public class AdminActivity extends AppCompatActivity implements DatePickerDialog
                         datePicker.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                datePickerDialog = DatePickerDialog.newInstance(AdminActivity.this, Year, Month, Day);
+//                                datePickerDialog = DatePickerDialog.newInstance(AdminActivity.this, Year, Month, Day);
+//
+//                                datePickerDialog.setThemeDark(false);
+//
+//                                datePickerDialog.showYearPickerFirst(false);
+//
+//                                datePickerDialog.setAccentColor(Color.parseColor("#0072BA"));
+//
+//                                datePickerDialog.setTitle("Select Date From DatePickerDialog");
+//
+//                                datePickerDialog.show(getFragmentManager(), "DatePickerDialog");
 
-                                datePickerDialog.setThemeDark(false);
 
-                                datePickerDialog.showYearPickerFirst(false);
-
-                                datePickerDialog.setAccentColor(Color.parseColor("#0072BA"));
-
-                                datePickerDialog.setTitle("Select Date From DatePickerDialog");
-
-                                datePickerDialog.show(getFragmentManager(), "DatePickerDialog");
+                              //  datePickerDialog.show(getFragmentManager(), "DatePickerDialog");
+                                CalendarDatePickerDialogFragment cdp = new CalendarDatePickerDialogFragment()
+                                        .setOnDateSetListener(AdminActivity.this);
+                                cdp.show(getSupportFragmentManager(), "Date piker");
                             }
                         });
 
@@ -132,7 +150,7 @@ public class AdminActivity extends AppCompatActivity implements DatePickerDialog
                                 odde = odds.getText().toString().trim();
                                 results = result.getText().toString().trim();
 
-                                if (date.isEmpty()){
+                                if (!date.isEmpty()){
 
                                     Archive model = new Archive();
 
@@ -273,9 +291,13 @@ public class AdminActivity extends AppCompatActivity implements DatePickerDialog
         initAdapter();
     }
 
+
+
     @Override
-    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
-        date =  String.valueOf(dayOfMonth + "-" + monthOfYear + "-" + year);
+    public void onDateSet(CalendarDatePickerDialogFragment dialog, int year, int monthOfYear, int dayOfMonth) {
+
+        int month = monthOfYear+1;
+        date =  String.valueOf(dayOfMonth + "-" + month + "-" + year);
     }
 
     public static class PostViewHolder extends RecyclerView.ViewHolder {
@@ -331,4 +353,14 @@ public class AdminActivity extends AppCompatActivity implements DatePickerDialog
 
     }
 
+    private void goBack(){
+        Intent goback = new Intent(this,HomeScreen.class);
+        startActivity(goback);
+    }
+
+    @Override
+    public void onBackPressed() {
+        goBack();
+        return;
+    }
 }

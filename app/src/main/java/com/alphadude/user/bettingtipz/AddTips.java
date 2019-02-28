@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.alphadude.user.bettingtipz.Model.Tips;
+import com.codetroopers.betterpickers.calendardatepicker.CalendarDatePickerDialogFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -25,7 +26,7 @@ import java.util.Calendar;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 
-public class AddTips extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
+public class AddTips extends AppCompatActivity implements  CalendarDatePickerDialogFragment.OnDateSetListener {
 
     private Calendar calendar;
     private DatePickerDialog datePickerDialog;
@@ -45,18 +46,18 @@ public class AddTips extends AppCompatActivity implements DatePickerDialog.OnDat
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_tips);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         dialog = new ProgressDialog(this);
 
         tipsRef = FirebaseDatabase.getInstance().getReference().child("Tips");
-        edtCountry = (EditText)findViewById(R.id.edtLeague);
-        edtHomeTeam = (EditText)findViewById(R.id.edtHomeTeam);
-        edtAwayTeam = (EditText)findViewById(R.id.edtAwayTeam);
-        edtTips = (EditText)findViewById(R.id.edtTips);
-        pickDate = (FancyButton)findViewById(R.id.btnDatePicker);
-        submitTips = (FancyButton)findViewById(R.id.btnSubmitTip);
+        edtCountry = findViewById(R.id.edtLeague);
+        edtHomeTeam = findViewById(R.id.edtHomeTeam);
+        edtAwayTeam = findViewById(R.id.edtAwayTeam);
+        edtTips = findViewById(R.id.edtTips);
+        pickDate = findViewById(R.id.btnDatePicker);
+        submitTips = findViewById(R.id.btnSubmitTip);
 
         calendar = Calendar.getInstance();
 
@@ -68,17 +69,20 @@ public class AddTips extends AppCompatActivity implements DatePickerDialog.OnDat
         pickDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                datePickerDialog = DatePickerDialog.newInstance(AddTips.this, Year, Month, Day);
-
-                datePickerDialog.setThemeDark(false);
-
-                datePickerDialog.showYearPickerFirst(false);
-
-                datePickerDialog.setAccentColor(Color.parseColor("#0072BA"));
-
-                datePickerDialog.setTitle("Select Date From DatePickerDialog");
-
-                datePickerDialog.show(getFragmentManager(), "DatePickerDialog");
+//                datePickerDialog = DatePickerDialog.newInstance(AddTips.this, Year, Month, Day);
+//
+//                datePickerDialog.setThemeDark(false);
+//
+//                datePickerDialog.showYearPickerFirst(false);
+//
+//                datePickerDialog.setAccentColor(Color.parseColor("#0072BA"));
+//
+//                datePickerDialog.setTitle("Select Date From DatePickerDialog");
+//
+//                datePickerDialog.show(getFragmentManager(), "DatePickerDialog");
+                CalendarDatePickerDialogFragment cdp = new CalendarDatePickerDialogFragment()
+                        .setOnDateSetListener(AddTips.this);
+                cdp.show(getSupportFragmentManager(), "Date piker");
             }
         });
 
@@ -145,11 +149,10 @@ public class AddTips extends AppCompatActivity implements DatePickerDialog.OnDat
 
     }
 
+
     @Override
-    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
-
-        date =  Day + "-" + Month + "-" + Year;
-
-
+    public void onDateSet(CalendarDatePickerDialogFragment dialog, int year, int monthOfYear, int dayOfMonth) {
+        int month = monthOfYear+1;
+            date = String.valueOf(dayOfMonth + "-"+month+"-"+year);
     }
 }

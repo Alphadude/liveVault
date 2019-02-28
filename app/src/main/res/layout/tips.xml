@@ -21,21 +21,21 @@
             android:id="@+id/imgMore"
             android:layout_height="30dp" />
 
-        <ImageView
-            android:id="@+id/userimage"
-            android:layout_centerVertical="true"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_football" />
+        <!--<ImageView-->
+            <!--android:id="@+id/userimage"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:scaleType="centerCrop"-->
+            <!--android:src="@drawable/ic_football" />-->
 
         <TextView
             android:id="@+id/userDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:layout_toRightOf="@+id/userimage"
             android:text="06/02/2019"
+            android:textColor="@color/colorPrimary"
             android:textSize="20sp" />
 
         <TextView
@@ -44,8 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/userDate"
             android:layout_marginLeft="16dp"
-            android:layout_toRightOf="@+id/userimage"
-            android:textColor="#5c5757"
+            android:textColor="#000"
             android:ellipsize="end"
             android:singleLine="true"
             android:textStyle="bold"
@@ -56,9 +55,9 @@
             android:id="@+id/list_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:layout_below="@+id/countries"
             android:layout_marginLeft="16dp"
-            android:layout_toRightOf="@+id/userimage"
             android:textColor="#000000"
             android:ellipsize="end"
             android:singleLine="true"
@@ -72,17 +71,16 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:orientation="horizontal"
-            android:layout_below="@+id/list_desc"
-            android:layout_toRightOf="@+id/userimage">
+            android:layout_below="@+id/list_desc">
 
             <TextView
                 android:id="@+id/tip"
                 android:layout_width="0dp"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:textColor="#000000"
-                android:text="Tip       Home"
+                android:text="Home win"
                 android:textStyle="italic"
                 android:textSize="16sp" />
 
@@ -93,9 +91,10 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:layout_marginTop="10dp"
-                android:textColor="#000000"
+                android:textColor="#FF0000"
+                android:textAllCaps="true"
                 android:text=" Home"
-                android:textStyle="italic"
+                android:textStyle="italic|bold"
                 android:textSize="16sp" />
 
         </LinearLayout>
