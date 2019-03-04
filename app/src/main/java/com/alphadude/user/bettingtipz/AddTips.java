@@ -20,9 +20,15 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import com.pusher.pushnotifications.PushNotifications;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 
@@ -37,7 +43,7 @@ public class AddTips extends AppCompatActivity implements  CalendarDatePickerDia
 
     private String key, country, homeTeam, awayTeam, tips,date;
 
-    private DatabaseReference tipsRef;
+    private DatabaseReference tipsRef,notificationRef;
     private ProgressDialog dialog;
 
 
@@ -52,6 +58,7 @@ public class AddTips extends AppCompatActivity implements  CalendarDatePickerDia
         dialog = new ProgressDialog(this);
 
         tipsRef = FirebaseDatabase.getInstance().getReference().child("Tips");
+        notificationRef = FirebaseDatabase.getInstance().getReference().child("Notification");
         edtCountry = findViewById(R.id.edtLeague);
         edtHomeTeam = findViewById(R.id.edtHomeTeam);
         edtAwayTeam = findViewById(R.id.edtAwayTeam);
@@ -69,17 +76,7 @@ public class AddTips extends AppCompatActivity implements  CalendarDatePickerDia
         pickDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                datePickerDialog = DatePickerDialog.newInstance(AddTips.this, Year, Month, Day);
-//
-//                datePickerDialog.setThemeDark(false);
-//
-//                datePickerDialog.showYearPickerFirst(false);
-//
-//                datePickerDialog.setAccentColor(Color.parseColor("#0072BA"));
-//
-//                datePickerDialog.setTitle("Select Date From DatePickerDialog");
-//
-//                datePickerDialog.show(getFragmentManager(), "DatePickerDialog");
+
                 CalendarDatePickerDialogFragment cdp = new CalendarDatePickerDialogFragment()
                         .setOnDateSetListener(AddTips.this);
                 cdp.show(getSupportFragmentManager(), "Date piker");
@@ -131,9 +128,32 @@ public class AddTips extends AppCompatActivity implements  CalendarDatePickerDia
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
-                            dialog.dismiss();
-                            Toast.makeText(AddTips.this, "Successfully added tip", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(AddTips.this,AdminActivity.class));
+
+                            Map<String, String> fcmNotification = new HashMap();
+                            fcmNotification.put("title", "ONE SLIP 2+3 ODDS 100% WIN");
+                            fcmNotification.put("body", " New Tip Added");
+
+
+                            notificationRef.push().setValue(fcmNotification)
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()){
+                                                dialog.dismiss();
+                                                Toast.makeText(AddTips.this, "Successfully added tip", Toast.LENGTH_SHORT).show();
+                                                startActivity(new Intent(AddTips.this,AdminActivity.class));
+                                            }
+
+                                        }
+                                    }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    dialog.dismiss();
+                                    Toast.makeText(AddTips.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                                }
+                            });
+
 
                         }
                     }

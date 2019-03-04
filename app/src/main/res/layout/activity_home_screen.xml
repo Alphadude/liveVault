@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bckgrnd"
+
     tools:context=".HomeScreen">
 
 
@@ -18,37 +18,35 @@
         android:id="@+id/freetips"
         android:layout_width="110dp"
         android:layout_height="110dp"
-        app:elevation="5dp"
+        android:elevation="5dp"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/freetip"
         android:layout_marginTop="20dp" />
 
     <Button
         android:id="@+id/vipsub"
         android:layout_width="110dp"
         android:layout_height="110dp"
-        app:elevation="5dp"
+        android:elevation="5dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:background="@drawable/vip" />
+       />
 
     <Button
         android:id="@+id/viparchives"
         android:layout_width="110dp"
         android:layout_height="110dp"
-        app:elevation="5dp"
+        android:elevation="5dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:background="@drawable/archieve" />
+        />
 
     <Button
         android:id="@+id/rate"
         android:layout_width="110dp"
         android:layout_height="110dp"
-        app:elevation="5dp"
+        android:elevation="5dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/rate" />
+        android:layout_marginTop="20dp" />
 
     </LinearLayout>
 </ScrollView>
