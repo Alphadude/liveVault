@@ -23,7 +23,7 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         android:textColor="#900"
-        android:text="Welcome to our vip platform. our aim is to make sure you make a profit out of betting business"/>
+        android:text="Welcome to our vip platform. our main focus is to grow your stake with our sure"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -32,7 +32,7 @@
         android:textStyle="bold"
         android:layout_marginTop="5dp"
         android:textColor="#000"
-        android:text="our performance is really outstanding. but our guest today and enjoy winning with us"/>
+        android:text="our performance is really outstanding. but our sure guest today and enjoy winning with us"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
         android:layout_marginTop="5dp"
         android:textStyle="bold"
         android:textColor="#009"
-        android:text="Congratulations to all out VIP members. ONLY ONE SLIP a day. What you need to do is stake high and get doublet the amount"/>
+        android:text="Congratulations to all out VIP members. ONLY ONE SLIP a day. What you need to do is stake and double the amount"/>
 
     <TableLayout
         android:layout_width="match_parent"

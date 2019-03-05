@@ -13,12 +13,13 @@
         tools:context=".VipSub">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="20sp"
             android:textColor="#900"
-            android:text="Sure Tips VIP"/>
+            android:background="#ffff00"
+            android:text="@string/sure_tips_vip"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,30 +27,30 @@
             android:textSize="18sp"
             android:textColor="#009"
             android:layout_marginTop="20dp"
-            android:text="MAXIMISE YOUR YOUR EARNING WITH VIP ONE SLIP 2+ ODDS"/>
+            android:text="@string/maximise_your_your_earning_with_vip_one_slip_2_3_odds"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:textSize="15sp"
+            android:textSize="16sp"
             android:textColor="#000"
             android:layout_marginTop="20dp"
-            android:text="We don't offer many slips to confuse our clients. we offer ONLY ONE SLIP having 2+ odds, very accurate and well analysed on our VIP platfrom. Tips are from reliable sources and with guaranteed profit."/>
+            android:text="We don't offer many slips. we offer just ONE SLIP OF 2+3 ODDS  as the case may be and very sure one analzed for our VIP subscribers, Only the Odds given are from a reliable source."/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:textSize="15sp"
+            android:textSize="16sp"
             android:textColor="#000"
             android:layout_marginTop="20dp"
-            android:text="We are using telegram channel to convey our tips. Please if you have not yet installed the telegram messenger, do it as your first stop towards joining our VIP. GO to playStore and Download."/>
+            android:text="We are using telegram as a Channel to forward our odds. Please if you have not yet installed the telegram messenger,please do so as your first stop towards joining our VIP. You can do so by downloading it from Playstore."/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="18sp"
             android:textColor="#900"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:text="VIP CHARGE"/>
         <TextView
             android:layout_width="match_parent"
@@ -58,13 +59,13 @@
             android:textSize="15sp"
             android:textColor="#000"
             android:layout_marginTop="20dp"
-            android:text="To keep the company running we charge the following small charges"/>
+            android:text="To keep the company running we charge the following"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="18sp"
-            android:textColor="#900"
+            android:textColor="#0000ff"
             android:layout_marginTop="20dp"
             android:text="@string/local_client_nigeria"/>
         <TextView
@@ -74,15 +75,41 @@
             android:textSize="20sp"
             android:textColor="#000"
             android:layout_marginTop="20dp"
-            android:text="Email: victorezeuchegbu@gmail.com"/>
+            android:text="To Subscribe"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:layout_marginTop="20dp"
+            android:text="PAY 20USD FOR ONE MONTH"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:textColor="#900"
+            android:textColor="#0000ff"
             android:layout_marginTop="20dp"
-            android:text="phone number : +234 08027168109"/>
+            android:text="Contact phone : +234 08027168109"/>
+
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:layout_marginTop="20dp"
+        android:text="After paying send payment details to:"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#0000ff"
+            android:layout_marginTop="20dp"
+            android:text="Email: victorezeuchegbu@gmail.com "/>
+
 
 
 
@@ -94,14 +121,6 @@
             android:textColor="#900"
             android:layout_marginTop="20dp"
             android:text="@string/international_client"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:textColor="#000"
-            android:layout_marginTop="20dp"
-            android:text="Email: victorezeuchegbu@gmail.com"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -110,7 +129,87 @@
             android:textSize="20sp"
             android:textColor="#900"
             android:layout_marginTop="20dp"
-            android:text="phone number : +234 08027168109"/>
+            android:text="@string/western_union_moneygram"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_marginTop="20dp"
+            android:text="To Subscribe send 20USD to"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_marginTop="20dp"
+            android:text="VICTOR ILOABUCHI EZEUCHEGBU"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_marginTop="20dp"
+            android:text="Country : Nigeria"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_marginTop="20dp"
+            android:text="City: Port Harcourt"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#0000ff"
+            android:layout_marginTop="20dp"
+            android:text="Phone :+234 08027168109 "/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_marginTop="20dp"
+            android:text="Amount : 20USD"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_marginTop="20dp"
+            android:text="After payment send details to "/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#0000ff"
+            android:layout_marginTop="20dp"
+            android:text="Email: victorezeuchegbu@gmail.com"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_marginTop="20dp"
+            android:background="#ffff00"
+            android:text="Come win with Us"/>
 
 
 

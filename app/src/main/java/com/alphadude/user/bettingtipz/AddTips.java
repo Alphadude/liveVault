@@ -131,7 +131,7 @@ public class AddTips extends AppCompatActivity implements  CalendarDatePickerDia
 
                             Map<String, String> fcmNotification = new HashMap();
                             fcmNotification.put("title", "ONE SLIP 2+3 ODDS 100% WIN");
-                            fcmNotification.put("body", " New Tip Added");
+                            fcmNotification.put("body", homeTeam+ " "+ awayTeam +": "+tips);
 
 
                             notificationRef.push().setValue(fcmNotification)

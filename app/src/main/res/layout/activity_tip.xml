@@ -1,15 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:id="@+id/lintext"
+        android:layout_margin="10dp"
+        tools:context=".TipArchives">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="#900"
+            android:text="Dear User Welcome to our 2+3 ODDS 100% winning. our team of experts is working with records to ensure stakers have the best result possibly"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:textColor="#0000ff"
+            android:text="nb : all outcomes are possible do not stake what you cannot afford to loose please bet responsibly"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"
+            android:textColor="#009"
+            android:text="Congratulations to all our vip subscribers. Note only VIP subscribers get up to 2+3 odds daily"/>
+
+
+
+
+    </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:id="@+id/rvTips"
-        android:layout_height="match_parent">
+        android:layout_weight="2"
+        android:layout_height="0dp">
 
     </android.support.v7.widget.RecyclerView>
 
-</RelativeLayout>
+</LinearLayout>
