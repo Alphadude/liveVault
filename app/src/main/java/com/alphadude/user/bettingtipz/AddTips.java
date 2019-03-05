@@ -129,12 +129,13 @@ public class AddTips extends AppCompatActivity implements  CalendarDatePickerDia
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
 
-                            Map<String, String> fcmNotification = new HashMap();
-                            fcmNotification.put("title", "ONE SLIP 2+3 ODDS 100% WIN");
-                            fcmNotification.put("body", homeTeam+ " "+ awayTeam +": "+tips);
 
+                            Notification notification = new Notification();
+                            notification.setBody(homeTeam + " vs "+ awayTeam+ ": "+tips);
+                            notification.setTitle("ONE SLIP 2+3 ODDS 100% WIN");
+                            notification.setDate(date);
 
-                            notificationRef.push().setValue(fcmNotification)
+                            notificationRef.push().setValue(notification)
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
