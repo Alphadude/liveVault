@@ -1,31 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:background="@drawable/bckgrnd"
-    xmlns:fancy="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
     tools:context=".Settings">
 
-    <mehdi.sakout.fancybuttons.FancyButton
-        android:id="@+id/btnSettingLogin"
-        android:paddingBottom="10dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:paddingTop="10dp"
-        android:layout_marginTop="15dp"
-        fancy:fb_defaultColor="@color/colorPrimary"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        fancy:fb_text="Login"
-        fancy:fb_textColor="#FFFFFF"
-        android:layout_above="@+id/btnlogin"
-        fancy:fb_textSize="20sp"
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        fancy:fb_radius="30dp"/>
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:text="Privacy policy"/>
+    <TextView
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:text=". The app doesnt collect any user personal data as, for example, name, picture or location"/>
+    <TextView
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:text=". Consequently, the app doesnt share any personal information with any other entity or third parties."/>
+    <TextView
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:text=". Please note in Betting all option are possible.. Only stake what you can afford to loose we are here to help minimize your loss."/>
+    <TextView
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:id="@+id/betwisely"
+        android:text="Please Bet wisely"/>
+
 
 
 </LinearLayout>
