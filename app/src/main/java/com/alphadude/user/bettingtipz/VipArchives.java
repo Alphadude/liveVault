@@ -1,6 +1,7 @@
 package com.alphadude.user.bettingtipz;
 
 import android.graphics.Color;
+import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,12 +9,16 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.alphadude.user.bettingtipz.Model.Archive;
 import com.alphadude.user.bettingtipz.Model.Tips;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class VipArchives extends AppCompatActivity {
 
@@ -42,12 +47,42 @@ public class VipArchives extends AppCompatActivity {
         archiveRef.keepSynced(true);
         archiveList.setHasFixedSize(true);
         archiveList.setLayoutManager(mLayoutManager);
+
+        FirebaseMessaging.getInstance().subscribeToTopic("tips")
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        //   String msg = getString(R.string.msg_subscribed);
+                        if (!task.isSuccessful()) {
+                            //  msg = getString(R.string.msg_subscribe_failed);
+                            Toast.makeText(VipArchives.this, "failed", Toast.LENGTH_SHORT).show();
+                        }
+                        //    Log.d(TAG, msg);
+                        Toast.makeText(VipArchives.this, "Subscribed", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         initAdapter();
+        FirebaseMessaging.getInstance().subscribeToTopic("tips")
+
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        //   String msg = getString(R.string.msg_subscribed);
+                        if (!task.isSuccessful()) {
+                            //  msg = getString(R.string.msg_subscribe_failed);
+                            Toast.makeText(VipArchives.this, "failed", Toast.LENGTH_SHORT).show();
+                        }
+                        //    Log.d(TAG, msg);
+                        Toast.makeText(VipArchives.this, "Subscribed", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
     }
 
     @Override

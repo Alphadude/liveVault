@@ -16,15 +16,19 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.alphadude.user.bettingtipz.Model.Tips;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class TipActivity extends AppCompatActivity {
 
@@ -52,6 +56,21 @@ public class TipActivity extends AppCompatActivity {
         TipsRef.keepSynced(true);
         tipsList.setHasFixedSize(true);
         tipsList.setLayoutManager(mLayoutManager);
+
+        FirebaseMessaging.getInstance().subscribeToTopic("tips")
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        //   String msg = getString(R.string.msg_subscribed);
+                        if (!task.isSuccessful()) {
+                            //  msg = getString(R.string.msg_subscribe_failed);
+                            Toast.makeText(TipActivity.this, "failed", Toast.LENGTH_SHORT).show();
+                        }
+                        //    Log.d(TAG, msg);
+                        Toast.makeText(TipActivity.this, "Subscribed", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
     }
 
     @Override
@@ -64,8 +83,22 @@ public class TipActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         initAdapter();
-    }
 
+        FirebaseMessaging.getInstance().subscribeToTopic("tips")
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        //   String msg = getString(R.string.msg_subscribed);
+                        if (!task.isSuccessful()) {
+                            //  msg = getString(R.string.msg_subscribe_failed);
+                            Toast.makeText(TipActivity.this, "failed", Toast.LENGTH_SHORT).show();
+                        }
+                        //    Log.d(TAG, msg);
+                        Toast.makeText(TipActivity.this, "Subscribed", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+    }
     private void initAdapter() {
         FirebaseRecyclerAdapter<Tips,PostViewHolder> adapter = new FirebaseRecyclerAdapter<Tips, PostViewHolder>(
                 Tips.class,
@@ -88,6 +121,7 @@ public class TipActivity extends AppCompatActivity {
         };
         tipsList.setAdapter(adapter);
     }
+
 
 
     public static class PostViewHolder extends RecyclerView.ViewHolder {

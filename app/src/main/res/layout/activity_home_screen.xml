@@ -19,7 +19,7 @@
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:elevation="5dp"
-        android:src="@drawable/freetips"
+        android:src="@drawable/red"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp" />
 
@@ -28,6 +28,7 @@
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:elevation="5dp"
+        android:src="@drawable/vip"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
        />
@@ -37,6 +38,7 @@
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:elevation="5dp"
+        android:src="@drawable/arch"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
         />
@@ -47,6 +49,7 @@
         android:layout_height="110dp"
         android:onClick="rateMe"
         android:elevation="5dp"
+        android:src="@drawable/arch"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp" />
 

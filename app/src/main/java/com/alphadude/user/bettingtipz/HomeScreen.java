@@ -3,6 +3,7 @@ package com.alphadude.user.bettingtipz;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +13,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class HomeScreen extends AppCompatActivity {
 
@@ -62,7 +68,19 @@ public class HomeScreen extends AppCompatActivity {
 //                rateMe();
 //            }
 //        });
-
+        FirebaseMessaging.getInstance().subscribeToTopic("tips")
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        //   String msg = getString(R.string.msg_subscribed);
+                        if (!task.isSuccessful()) {
+                            //  msg = getString(R.string.msg_subscribe_failed);
+                            Toast.makeText(HomeScreen.this, "failed", Toast.LENGTH_SHORT).show();
+                        }
+                        //    Log.d(TAG, msg);
+                        Toast.makeText(HomeScreen.this, "Subscribed", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
     }
 
@@ -89,7 +107,6 @@ public class HomeScreen extends AppCompatActivity {
             startActivity(new Intent(Intent.ACTION_VIEW,
                     Uri.parse("http://play.google.com/store/apps/details?id=" + "com.android.chrome")));
         }
-        git
     }
 
     public void login(){
@@ -104,6 +121,25 @@ public class HomeScreen extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        FirebaseMessaging.getInstance().subscribeToTopic("tips")
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        //   String msg = getString(R.string.msg_subscribed);
+                        if (!task.isSuccessful()) {
+                            //  msg = getString(R.string.msg_subscribe_failed);
+                            Toast.makeText(HomeScreen.this, "failed", Toast.LENGTH_SHORT).show();
+                        }
+                        //    Log.d(TAG, msg);
+                        Toast.makeText(HomeScreen.this, "Subscribed", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+    }
+
     public boolean onOptionsItemSelected(MenuItem item) {
 
 
@@ -112,6 +148,10 @@ public class HomeScreen extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.settings:
                 startActivity(new Intent(this, Settings.class));
+                return true;
+
+            case R.id.notification:
+                startActivity(new Intent(this, NotifyActivity.class));
                 return true;
             case R.id.share:
                 Intent share = new Intent(Intent.ACTION_SEND);

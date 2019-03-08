@@ -10,4 +10,9 @@
         android:title="Settings"
         android:icon="@drawable/share"
         app:showAsAction="always"/>
+
+    <item android:id="@+id/notification"
+        android:title="Notification"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        app:showAsAction="always"/>
 </menu>

@@ -3,11 +3,11 @@
     package="com.alphadude.user.bettingtipz">
 
     <application
+        android:name=".App"
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/icon"
         android:label="@string/app_name"
-        android:hardwareAccelerated="false"
-        android:name=".App"
         android:largeHeap="true"
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
@@ -26,6 +26,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
         <service android:name=".MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -49,7 +50,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.alphadude.user.bettingtipz.AdminActivity" />
         </activity>
-        <activity android:name=".Settings"></activity>
+        <activity android:name=".Settings" />
+        <activity android:name=".NotifyActivity"></activity>
     </application>
 
 </manifest>
