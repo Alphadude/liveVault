@@ -61,13 +61,11 @@ public class TipActivity extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        //   String msg = getString(R.string.msg_subscribed);
+
                         if (!task.isSuccessful()) {
-                            //  msg = getString(R.string.msg_subscribe_failed);
-                            Toast.makeText(TipActivity.this, "failed", Toast.LENGTH_SHORT).show();
+
                         }
-                        //    Log.d(TAG, msg);
-                        Toast.makeText(TipActivity.this, "Subscribed", Toast.LENGTH_SHORT).show();
+
                     }
                 });
 
@@ -88,13 +86,10 @@ public class TipActivity extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        //   String msg = getString(R.string.msg_subscribed);
                         if (!task.isSuccessful()) {
-                            //  msg = getString(R.string.msg_subscribe_failed);
-                            Toast.makeText(TipActivity.this, "failed", Toast.LENGTH_SHORT).show();
+
                         }
-                        //    Log.d(TAG, msg);
-                        Toast.makeText(TipActivity.this, "Subscribed", Toast.LENGTH_SHORT).show();
+
                     }
                 });
 

@@ -120,20 +120,7 @@ public class AdminActivity extends AppCompatActivity implements  CalendarDatePic
                         datePicker.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-//                                datePickerDialog = DatePickerDialog.newInstance(AdminActivity.this, Year, Month, Day);
-//
-//                                datePickerDialog.setThemeDark(false);
-//
-//                                datePickerDialog.showYearPickerFirst(false);
-//
-//                                datePickerDialog.setAccentColor(Color.parseColor("#0072BA"));
-//
-//                                datePickerDialog.setTitle("Select Date From DatePickerDialog");
-//
-//                                datePickerDialog.show(getFragmentManager(), "DatePickerDialog");
 
-
-                              //  datePickerDialog.show(getFragmentManager(), "DatePickerDialog");
                                 CalendarDatePickerDialogFragment cdp = new CalendarDatePickerDialogFragment()
                                         .setOnDateSetListener(AdminActivity.this);
                                 cdp.show(getSupportFragmentManager(), "Date piker");
@@ -201,7 +188,7 @@ public class AdminActivity extends AppCompatActivity implements  CalendarDatePic
 
                         break;
 
-                    default: //For all other cases, do this        break;
+                    default:
                 }
             }
         });

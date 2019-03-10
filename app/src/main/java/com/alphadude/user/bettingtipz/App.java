@@ -26,10 +26,10 @@ public class App extends Application {
                      //   String msg = getString(R.string.msg_subscribed);
                         if (!task.isSuccessful()) {
                           //  msg = getString(R.string.msg_subscribe_failed);
-                            Toast.makeText(App.this, "failed", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(App.this, "failed", Toast.LENGTH_SHORT).show();
                         }
                     //    Log.d(TAG, msg);
-                        Toast.makeText(App.this, "Subscribed", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(App.this, "Subscribed", Toast.LENGTH_SHORT).show();
                     }
                 });
     }

@@ -32,10 +32,10 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         auth = FirebaseAuth.getInstance();
 
-        Login = (FancyButton)findViewById(R.id.login);
-        Back =(FancyButton)findViewById(R.id.back);
-        edtEmail = (EditText)findViewById(R.id.loginEmail);
-        edtPaasword = (EditText)findViewById(R.id.loginPassword);
+        Login = findViewById(R.id.login);
+        Back = findViewById(R.id.back);
+        edtEmail = findViewById(R.id.loginEmail);
+        edtPaasword = findViewById(R.id.loginPassword);
         dialog = new ProgressDialog(this);
 
 
