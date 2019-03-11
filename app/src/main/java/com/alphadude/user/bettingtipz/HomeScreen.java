@@ -146,10 +146,10 @@ public class HomeScreen extends AppCompatActivity {
             case R.id.share:
                 Intent share = new Intent(Intent.ACTION_SEND);
                 share.setType("text/plain");
-                String shareBody = "hello welcome to one slip 2+3 odds downloaded from https://bit.ly/oneslip23odds  ";
-                //String shareTopic ="header to see what works";
+                String shareBody = "hello welcome to one slip 2+3 odds 100% win please download from https://bit.ly/oneslip23odds  ";
+
                 share.putExtra(Intent.EXTRA_TEXT,shareBody);
-                //share.putExtra(Intent.EXTRA_SUBJECT,shareTopic);
+
                 startActivity(Intent.createChooser(share,"Share One Slip 2+3 Odds 100% win"));
             default:
                 return super.onOptionsItemSelected(item);

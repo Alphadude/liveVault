@@ -52,13 +52,11 @@ public class VipArchives extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        //   String msg = getString(R.string.msg_subscribed);
+
                         if (!task.isSuccessful()) {
-                            //  msg = getString(R.string.msg_subscribe_failed);
-                            Toast.makeText(VipArchives.this, "failed", Toast.LENGTH_SHORT).show();
+
                         }
-                        //    Log.d(TAG, msg);
-                        Toast.makeText(VipArchives.this, "Subscribed", Toast.LENGTH_SHORT).show();
+
                     }
                 });
 

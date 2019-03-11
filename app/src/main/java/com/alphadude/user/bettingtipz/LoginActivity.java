@@ -54,29 +54,35 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void startFirebaseLogin() {
-        dialog.setMessage("Login you in.. please wait");
-        dialog.setCancelable(false);
-        dialog.show();
 
         email = edtEmail.getText().toString().trim();
         password = edtPaasword.getText().toString().trim();
 
-        auth.signInWithEmailAndPassword(email,password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
-                            dialog.dismiss();
-                            move();
+        if(email.isEmpty()|| password.isEmpty()){
+            return;
+        }else{
+            dialog.setMessage("Login you in.. please wait");
+            dialog.setCancelable(false);
+            dialog.show();
+
+            auth.signInWithEmailAndPassword(email,password)
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()){
+                                dialog.dismiss();
+                                move();
+                            }
                         }
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                dialog.dismiss();
-                Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
+                    }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    dialog.dismiss();
+                    Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
     }
 
     public void move(){
